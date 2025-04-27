@@ -4,9 +4,8 @@
  * @return {number}
  */
  var findMaxAverage = function(nums, k) {
-    let left = 0;
     // let currSum = 0;
-    let currMax = -Infinity; // ! ВАЖНО в массиве могут быть отрицательные значения, поэтому первое значение left должно буть как можно меньше
+    let currMax = -Infinity; // ! ВАЖНО в массиве могут быть отрицательные значения, поэтому первое значение currMax должно буть как можно меньше
     // окно, двигаемся по нему,
     // при первой итерации считаем сумму в окне и записываем в переменную
     // при дальнейших итерациях
@@ -28,7 +27,6 @@
         // считаем сумму подмассива
         currSum = currSum - nums[right - k] + nums[right];
         currMax = Math.max(currMax, currSum);
-        left++;
     };
     return currMax/k;
 };
